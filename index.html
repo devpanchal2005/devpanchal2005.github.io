@@ -1,907 +1,510 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Panchal - Data Scientist & Analyst</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dev S Panchal | Applied AI Engineer</title>
+    <meta name="description"
+        content="Dev S Panchal, AI Engineer at Relig Global. I build LLM apps, RAG pipelines and agent workflows in Python.">
+    <meta property="og:title" content="Dev S Panchal | Applied AI Engineer">
+    <meta property="og:description" content="I build LLM apps, RAG pipelines and agent workflows in Python.">
+    <meta property="og:image" content="https://devpanchal2005.github.io/assets/profile_photo.jpg">
+    <meta property="og:url" content="https://devpanchal2005.github.io/">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0e11" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#fff1f5',
-                            100: '#ffdce5',
-                            200: '#ffb3c5',
-                            300: '#ff809c',
-                            400: '#f94f70',
-                            500: '#EC0B43',
-                            600: '#d10a3d',
-                            700: '#aa0832',
-                            800: '#850628',
-                            900: '#5f041d',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['DM Sans', 'system-ui', 'sans-serif'],
-                        display: ['Syne', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                },
-            },
-        }
-    </script>
-
 </head>
 
-<body class="bg-black text-white font-sans selection:bg-white/20 selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav id="top-nav" class="fixed top-0 w-full bg-black/40 backdrop-blur-sm border-b border-gray-900 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-center items-center h-16">
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Home
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#about"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        About
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#experience"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Experience
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#projects"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Projects
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#skills"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Skills
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#education"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Education
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                    <a href="#contact"
-                        class="group relative text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold">
-                        Contact
-                        <span
-                            class="absolute left-0 -bottom-1 w-full h-0.5 bg-primary-400 scale-x-0 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span>
-                    </a>
-                </div>
+    <div class="bg" aria-hidden="true">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-grid"></div>
+        <div class="bg-spot"></div>
+    </div>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="#top" class="brand">
+                Dev Panchal
+            </a>
+            <nav class="nav" aria-label="Sections">
+                <span class="nav-pill" aria-hidden="true"></span>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certificates">Certs</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="mailto:devspanchal.connect@gmail.com" class="btn btn-sm btn-ghost">Email</a>
+                <a href="assets/Dev%20Panchal%20Resume.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-dark">Resume</a>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center pt-16" data-animate>
-        <div class="w-full max-w-4xl px-6 lg:px-12 text-left ml-4">
-            <div class="animate-fade-in">
-                <div class="mb-8">
-                    <img src="assets/profile_photo.jpg" alt="Dev Panchal"
-                        class="w-40 h-40 rounded-full border-4 border-primary-400 shadow-lg shadow-primary-400/30 animate-float">
-                </div>
-                <h1 class="font-display  text-5xl md:text-7xl font-bold mb-6">
-                    <span class="text-primary-400">Dev S Panchal</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl leading-relaxed">
-                    I turn complex data into clear insights, helping teams make smarter decisions through data analysis,
-                    visualization, and statistical modeling.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact"
-                        class="bg-primary-400 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary-400/40 transform hover:-translate-y-1">
-                        Contact
-                    </a>
-                    <a href="assets/Dev Panchal Resume.pdf" target="_blank"
-                        class="border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1">
-                        Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="top">
 
-    <!-- About Section -->
-    <section id="about" data-animate class="min-h-screen flex items-center justify-center py-16 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-            <h2 class="font-display text-5xl md:text-6xl text-center mb-16 font-bold text-primary-400">About Me</h2>
+        <!-- Hero -->
+        <section class="hero wrap" aria-label="Intro">
+            <div class="hero-grid">
+                <div>
+                    <p class="status mono"><span class="dot"></span>AI Engineer at Relig Global</p>
+                    <h1>Dev S Panchal</h1>
+                    <p class="lede">
+                        Applied AI engineer. I build <em>LLM, RAG and agent</em> systems and get them
+                        running in production.
+                    </p>
+                    <p class="meta">Ahmedabad, India · B.Eng AI &amp; Data Science, LJ University</p>
 
-            <div class="max-w-4xl mx-auto">
-                <div class="rounded-2xl p-8 md:p-12 shadow-xl bg-black/30 backdrop-blur-md border border-white/10">
-                    <div class="space-y-6 text-lg text-gray-200 leading-relaxed">
-                        <p>
-                            Currently pursuing a Bachelor's in Computer Engineering with a specialization in
-                            <span class="text-primary-400 font-semibold">AI and Data Science</span> at LJ University.
-                            I'm passionate about transforming raw data into actionable insights through analysis,
-                            visualization, and statistical modeling that drive real business decisions.
-                        </p>
-                        <p>
-                            My work spans the full data lifecycle, from data wrangling and exploratory analysis to
-                            building interactive dashboards and BI reports. I enjoy uncovering the story hidden in
-                            datasets and communicating findings clearly to both technical and non-technical audiences.
-                        </p>
-                        <p>
-                            When I'm not analyzing data, you'll find me exploring new visualization tools, working on
-                            predictive modeling projects, or keeping up with the latest trends in business intelligence
-                            and applied machine learning.
-                        </p>
+                    <div class="actions">
+                        <a href="assets/Dev%20Panchal%20Resume.pdf" target="_blank" rel="noopener"
+                            class="btn btn-primary">Resume</a>
+                        <a href="mailto:devspanchal.connect@gmail.com" class="btn">Email</a>
+                        <a href="https://github.com/devpanchal2005" target="_blank" rel="noopener" class="icon-link"
+                            aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/devpanchal2005" target="_blank" rel="noopener"
+                            class="icon-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center py-10">
-                    <a href="/cdn-cgi/l/email-protection#2d49485b5d4c434e454c41034e424343484e596d4a404c4441034e4240125e584f47484e591065445f44434a081f1d64435c58445f5417081f1d694c594c081f1d7e4e4448434e48081f1d081f6b081f1d6c434c415459444e5e081f1d7f4241480b4f424954106544081f1d69485b01081f1d64081f1d4e4c4048081f1d4c4e5f425e5e081f1d5442585f081f1d5d425f594b42414442081f1d4c4349081f1d4c40081f1d444359485f485e594849081f1d4443081f1d49445e4e585e5e44434a081f1d4c081f1d5d4259484359444c41081f1d425d5d425f59584344595403081f1d6e4c43081f1d5a48081f1d5e4e454849584148081f1d4c081f1d4e4c414112"
-                        class="bg-black/40 backdrop-blur-sm hover:bg-primary-400 text-white hover:text-black px-8 py-4 rounded-xl border border-white/10 hover:border-primary-400 transition-all duration-300 flex items-center justify-center space-x-3 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-400/30">
-                        <i class="fas fa-envelope text-xl"></i>
-                        <span class="font-semibold">Send Email</span>
-                    </a>
-                    <a href="https://linkedin.com/in/devpanchal" target="_blank"
-                        class="bg-black/40 backdrop-blur-sm hover:bg-primary-400 text-white hover:text-black px-8 py-4 rounded-xl border border-white/10 hover:border-primary-400 transition-all duration-300 flex items-center justify-center space-x-3 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-400/30">
-                        <i class="fab fa-linkedin text-xl"></i>
-                        <span class="font-semibold">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/devpanchal" target="_blank"
-                        class="bg-black/40 backdrop-blur-sm hover:bg-primary-400 text-white hover:text-black px-8 py-4 rounded-xl border border-white/10 hover:border-primary-400 transition-all duration-300 flex items-center justify-center space-x-3 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-primary-400/30">
-                        <i class="fab fa-github text-xl"></i>
-                        <span class="font-semibold">GitHub</span>
-                    </a>
-                </div>
+                <img src="assets/profile_photo.jpg" alt="Dev S Panchal" width="220" height="220" class="avatar">
             </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" data-animate
-        class="min-h-screen flex items-center justify-center py-16 relative overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none">
-        </div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-            <h2 class="font-display text-5xl md:text-6xl text-center mb-16 font-bold text-primary-400">Experience</h2>
-            <div class="relative">
-                <div
-                    class="absolute left-[31px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-white/60 via-white/20 to-transparent">
+            <dl class="stats">
+                <div>
+                    <dt>66%</dt>
+                    <dd>less time on weekly reports</dd>
                 </div>
-                <div class="relative pl-20">
-                    <div
-                        class="absolute left-[24px] top-8 w-4 h-4 rounded-full bg-primary-400 shadow-[0_0_10px_3px_rgba(249,79,112,0.4)] ring-2 ring-primary-400/20">
-                        <div class="absolute inset-0 rounded-full bg-primary-400 animate-ping opacity-40"></div>
+                <div>
+                    <dt>8.95</dt>
+                    <dd>CGPA out of 10</dd>
+                </div>
+                <div>
+                    <dt>3</dt>
+                    <dd>ML apps live on Streamlit</dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section wrap reveal exp">
+            <div class="section-head exp-head">
+                <div>
+                    <p class="eyebrow mono">01 / 05</p>
+                    <h2>Experience</h2>
+                </div>
+                <p class="mono muted exp-count">1 role · <span data-tenure="2025-11">since Nov 2025</span></p>
+            </div>
+
+            <article class="card exp-card">
+                <aside class="exp-company">
+                    <a href="https://religglobal.com" target="_blank" rel="noopener" class="exp-logo">
+                        <img src="assets/logos/relig-global.png" alt="Relig Global" width="340" height="144">
+                    </a>
+                    <div class="exp-role">
+                        <h3>AI Engineer</h3>
+                        <p class="muted">Relig Global</p>
                     </div>
-                    <div
-                        class="rounded-2xl p-8 shadow-xl bg-black/30 backdrop-blur-md border border-white/10 hover:border-primary-400/30 transition-colors duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
-                            <div>
-                                <h3 class="font-display text-xl font-semibold text-white">AI Developer</h3>
-                                <p class="text-primary-400 font-medium mt-1">Relig Global</p>
+                    <dl class="exp-facts">
+                        <div>
+                            <dt class="mono">When</dt>
+                            <dd>Nov 2025 <span class="exp-live mono"><span class="dot"></span>Current</span></dd>
+                        </div>
+                        <div>
+                            <dt class="mono">Where</dt>
+                            <dd>Ahmedabad, hybrid</dd>
+                        </div>
+                        <div>
+                            <dt class="mono">Company</dt>
+                            <dd>Recruiting, RPO and finance outsourcing</dd>
+                        </div>
+                    </dl>
+                    <ul class="chips">
+                        <li>Python</li>
+                        <li>RAG</li>
+                        <li>LLMs</li>
+                        <li>openpyxl</li>
+                        <li>Data pipelines</li>
+                    </ul>
+                </aside>
+
+                <div class="exp-main">
+                    <ol class="exp-list">
+                        <li>
+                            <h4>RAG over financial documents</h4>
+                            <p>Retrieval pipeline that turns financial reports and client PDFs into context the
+                                team can query.</p>
+                        </li>
+                        <li>
+                            <h4>Data pipelines for trading</h4>
+                            <p>Python pipelines that clean raw financial data into signals for the trading and
+                                ops teams.</p>
+                        </li>
+                        <li>
+                            <h4>Reporting automation</h4>
+                            <p>Automated reconciliation and weekly reports with openpyxl. Work that took 3 days
+                                now ships the same day.</p>
+                        </li>
+                        <li>
+                            <h4>Working with stakeholders</h4>
+                            <p>I scope loosely defined requests with the people asking, then ship them as ML
+                                and GenAI tools.</p>
+                        </li>
+                    </ol>
+
+                    <div class="exp-metric">
+                        <div class="exp-metric-num">66%</div>
+                        <div class="exp-metric-bar" aria-hidden="true">
+                            <div><span class="mono">Before</span><i style="--w: 100%"></i><span class="mono">3 days</span></div>
+                            <div><span class="mono">After</span><i style="--w: 34%"></i><span class="mono">same day</span></div>
+                        </div>
+                        <p class="muted">less time spent on weekly reporting</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section wrap reveal">
+            <div class="section-head">
+                <p class="eyebrow mono">02 / 05</p>
+                <h2>Projects</h2>
+            </div>
+
+            <div class="projects">
+
+                <!-- ScholarBot -->
+                <article class="card project">
+                    <div class="visual flow" aria-label="ScholarBot request routing">
+                        <p class="flow-label mono">How a question is routed</p>
+                        <div class="flow-step">Student question</div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">NLP preprocessing → intent engine<span class="mono">confidence
+                                score</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-split">
+                            <div class="flow-step">
+                                <span class="mono">confident</span>
+                                Rule-based answer
                             </div>
-                            <div class="flex flex-col items-start sm:items-end gap-1">
-                                <span class="text-sm text-gray-400">November 2024 &ndash; Present</span>
-                                <span
-                                    class="text-xs px-3 py-1 rounded-full bg-primary-400/10 border border-primary-400/30 text-primary-400 font-medium">Full-time</span>
+                            <div class="flow-step flow-accent">
+                                <span class="mono">ambiguous / OOD</span>
+                                Gemini 2.5 Flash + PDF context
                             </div>
                         </div>
-                        <ul class="space-y-3 text-gray-300 text-base leading-relaxed">
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0"></span>
-                                Designed interactive analytical dashboards surfacing KPIs and business metrics for
-                                non-technical stakeholders.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0"></span>
-                                Conducted exploratory data analysis to identify trends and patterns, driving
-                                data-informed decisions across client projects.
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0"></span>
-                                Built predictive models and automated reporting pipelines, improving forecasting
-                                accuracy and reducing manual effort.
-                            </li>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>ScholarBot</h3>
+                            <span class="mono muted">Jan 2026</span>
+                        </div>
+                        <p class="summary">School FAQ assistant that answers from the school's own documents.
+                            It only calls the LLM when the rule engine is unsure.</p>
+                        <ul class="bullets">
+                            <li>Rule-based intent engine (tokenization, normalization, confidence scoring)
+                                with Gemini 2.5 Flash as the fallback.</li>
+                            <li>Timetables, notices and rulebooks are split into sliding-window chunks and passed
+                                to the LLM as context.</li>
+                            <li>A confidence threshold sends only ambiguous or out-of-distribution questions to
+                                Gemini, so <strong>most questions never hit the API</strong>.</li>
+                            <li>Flask REST backend with NLP, PDF parsing, intent classification and LLM calls
+                                in separate modules.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>Gemini API</li>
+                            <li>RAG</li>
+                            <li>NLP</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </article>
 
-    <!-- Projects Section -->
-    <!-- Projects Section (Vertical Layout) -->
-    <section id="projects" class="py-20 bg-black">
-        <div class="max-w-6xl mx-auto px-6">
-
-            <!-- Title -->
-            <div class="mb-16">
-                <h2 class="font-display text-5xl md:text-6xl font-bold text-primary-400">
-                    Projects
-                </h2>
-            </div>
-
-            <!-- Project List -->
-            <div class="flex flex-col gap-20">
-
-                <!-- Project 1 -->
-                <div
-                    class="group border border-white/10 rounded-2xl overflow-hidden hover:border-primary-400 transition-all duration-500">
-
-                    <!-- Image -->
-                    <a href="https://thepredictgrad.streamlit.app" target="_blank"
-                        class="relative block w-full h-[350px] overflow-hidden">
-                        <img src="assets/projects/PredictGrad.png"
-                            class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-500">
-                            <div class="w-14 h-14 rounded-full bg-primary-400 flex items-center justify-center">
-                                <i class="fas fa-arrow-up-right-from-square text-black text-lg"></i>
+                <!-- PredictGrad -->
+                <article class="card project">
+                    <div class="visual flow" aria-label="PredictGrad prediction pipeline">
+                        <p class="flow-label mono">How a student is flagged</p>
+                        <div class="flow-step">Semester 1 + 2 records<span class="mono">905 students, no future
+                                data</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">Ridge · CatBoost · ExtraTrees · BalancedBagging<span
+                                class="mono">voting + stacking ensembles</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-split">
+                            <div class="flow-step">
+                                <span class="mono">MAE 5.16 – 7.10</span>
+                                Predicted marks
+                            </div>
+                            <div class="flow-step flow-accent">
+                                <span class="mono">F1 0.51</span>
+                                At-risk flag
                             </div>
                         </div>
-                    </a>
-
-                    <!-- Content -->
-                    <div class="p-8">
-                        <div class="flex justify-between items-start flex-wrap gap-4 mb-3">
-                            <h3 class="text-2xl font-semibold text-white">PredictGrad</h3>
-                            <div class="flex gap-4 text-sm">
-                                <a href="https://thepredictgrad.streamlit.app" target="_blank"
-                                    class="text-primary-400 hover:underline">Live
-                                </a>
-                                <a href="https://github.com/DevPanchal2005/PredictGrad" target="_blank"
-                                    class="text-gray-400 hover:text-primary-400">GitHub </a>
-                            </div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">SHAP dashboard<span class="mono">why this student was
+                                flagged</span></div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>PredictGrad</h3>
+                            <span class="mono muted">Jun 2025</span>
                         </div>
-
-                        <p class="text-gray-400 mb-6 leading-relaxed">
-                            End-to-end ML pipeline predicting academic risk for 905 engineering students. Forecasts Sem
-                            3 subject marks and
-                            classifies students likely to drop 10+ percentile points, deployed as an interactive
-                            Streamlit app.
-                        </p>
-
-                        <div class="space-y-2 mb-6">
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Built 4
-                                independent regression models (56 pipelines each) using Voting Regressor with
-                                BayesSearchCV & achieving MAE
-                                as low as 5.71</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Designed
-                                risk classification using a StackingClassifier (CatBoost + LGBM + ExtraTrees) with
-                                Boruta feature selection
-                                and threshold tuning → Recall 0.66 on imbalanced data</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span>
-                                Engineered
-                                percentile-based risk flag from predicted marks as classification target, strictly using
-                                Sem 1 and 2 data to prevent
-                                leakage
-                            </p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Delivered
-                                SHAP-powered explainability and EDA dashboards inside the deployed app</p>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Python</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Scikit-Learn</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">CatBoost</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">LightGBM</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">SHAP</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Streamlit</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">BayesSearchCV</span>
+                        <p class="summary">Flags engineering students at academic risk before their grades drop.
+                            Trained on 905 students and deployed on Streamlit.</p>
+                        <ul class="bullets">
+                            <li>Regression and classification with Ridge, CatBoost, ExtraTrees and
+                                BalancedBagging, combined through Voting and Stacking.</li>
+                            <li><strong>MAE 5.16 to 7.10</strong> on predicted scores, <strong>F1 0.51</strong> on
+                                imbalanced risk classification.</li>
+                            <li>Target built only from semester 1 and 2 data, so nothing leaks from the future.</li>
+                            <li>Risk dashboard that uses SHAP to show why a student was flagged.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>Scikit-learn</li>
+                            <li>CatBoost</li>
+                            <li>SHAP</li>
+                            <li>Streamlit</li>
+                        </ul>
+                        <div class="links">
+                            <a href="https://thepredictgrad.streamlit.app" target="_blank" rel="noopener"
+                                class="btn btn-sm btn-dark">Live demo ↗</a>
+                            <a href="https://github.com/devpanchal2005/PredictGrad" target="_blank" rel="noopener"
+                                class="btn btn-sm">Code ↗</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div
-                    class="group border border-white/10 rounded-2xl overflow-hidden hover:border-primary-400 transition-all duration-500">
-
-                    <!-- Image -->
-                    <a href="https://gaiasentinel.streamlit.app/" target="_blank"
-                        class="relative block w-full h-[350px] overflow-hidden">
-                        <img src="assets/projects/GaiaSentinel.png"
-                            class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-500">
-                            <div class="w-14 h-14 rounded-full bg-primary-400 flex items-center justify-center">
-                                <i class="fas fa-arrow-up-right-from-square text-black text-lg"></i>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Content -->
-                    <div class="p-8">
-                        <div class="flex justify-between items-start flex-wrap gap-4 mb-3">
-                            <h3 class="text-2xl font-semibold text-white">GaiaSentinel</h3>
-                            <div class="flex gap-4 text-sm">
-                                <a href="https://gaiasentinel.streamlit.app/" target="_blank"
-                                    class="text-primary-400 hover:underline">Live </a>
-                                <a href="https://github.com/DevPanchal2005/GaiaSentinel" target="_blank"
-                                    class="text-gray-400 hover:text-primary-400">GitHub </a>
-                            </div>
-                        </div>
-
-                        <p class="text-gray-400 mb-6 leading-relaxed">
-                            Real-time trash detection system using YOLOv8 trained on 1,500 annotated images across 14
-                            waste categories,
-                            built to support environmental monitoring and smart waste classification.
-                        </p>
-
-                        <div class="space-y-2 mb-6">
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Processed
-                                and remapped 60 raw COCO categories into 14 clean waste classes across 4,784 annotations
-                                with zero errors
-                            </p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Trained
-                                YOLOv8s on a T4 GPU for 100 epochs with HSV shift, horizontal flip, and scale
-                                augmentation</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Dropped
-                                14 underrepresented classes below 98 annotations to reduce model confusion and improve
-                                mAP</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span> Deployed
-                                as a Streamlit app with image upload, live detection, and annotated bounding box output
-                            </p>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Python</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">YOLOv8</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Ultralytics</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">OpenCV</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Roboflow</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Streamlit</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div
-                    class="group border border-white/10 rounded-2xl overflow-hidden hover:border-primary-400 transition-all duration-500">
-
-                    <!-- Image -->
-                    <a href="https://attendance-for-impact.streamlit.app/" target="_blank"
-                        class="relative block w-full h-[350px] overflow-hidden">
-                        <img src="assets/projects/Attendance-for-Impact.png"
-                            class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-500">
-                            <div class="w-14 h-14 rounded-full bg-primary-400 flex items-center justify-center">
-                                <i class="fas fa-arrow-up-right-from-square text-black text-lg"></i>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="p-8">
-                        <div class="flex justify-between items-start flex-wrap gap-4 mb-3">
-                            <h3 class="text-2xl font-semibold text-white">Attendance For Impact</h3>
-                            <div class="flex gap-4 text-sm">
-                                <a href="https://attendance-for-impact.streamlit.app/" target="_blank"
-                                    class="text-primary-400 hover:underline">Live</a>
-                                <a href="https://github.com/DevPanchal2005/Attedance-For-Impact" target="_blank"
-                                    class="text-gray-400 hover:text-primary-400">GitHub</a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 mb-6 leading-relaxed">
-                            Statistical analysis dashboard correlating student attendance with academic performance
-                            using multi-variate analysis and automated insight generation for educators.
-                        </p>
-                        <div class="space-y-2 mb-6">
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span>
-                                Applied skewness, IQR, standard deviation, and correlation analysis across attendance
-                                and marks data</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span>
-                                Built automated insight engine generating context-aware recommendations per institution
-                                type</p>
-                            <p class="text-gray-500 text-sm flex items-start gap-2"><span
-                                    class="text-primary-400 mt-0.5">→</span>
-                                Deployed interactive Streamlit dashboard with regression scatter plots, histograms, and
-                                strip plots</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Python</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Pandas</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Plotly</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Streamlit</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Skewness
-                                & IQR</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">OLS
-                                Regression</span>
-                            <span
-                                class="px-3 py-1.5 text-xs font-medium rounded-full border border-primary-400/60 text-primary-400 bg-primary-400/15 tracking-wide">Insight
-                                Automation</span>
-                        </div>
-                    </div>
-                </div>
+                </article>
 
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="min-h-screen flex items-center justify-center py-20 bg-black">
-        <div class="max-w-7xl w-full px-6">
+            <h3 class="sub-head">More projects</h3>
+            <div class="mini-grid">
 
-            <!-- Title -->
-            <div class="w-full text-center mb-16">
-                <h2 class="font-display text-5xl md:text-6xl font-bold text-right mb-16 text-primary-400">Skills</h2>
-            </div>
-
-            <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
-                <!-- Data Analysis -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-0">
-                        Data Analysis
-                    </h3>
-                    <div class="relative h-px mb-4 mt-2">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
+                <article class="card mini">
+                    <div class="mini-body">
+                        <p class="mini-kicker mono">Computer vision</p>
+                        <h4>GaiaSentinel</h4>
+                        <p>Real-time waste detection with YOLOv8. 14 classes, trained on 1,500 images with
+                            4,784 annotations.</p>
+                        <ul class="chips">
+                            <li>YOLOv8</li>
+                            <li>Object detection</li>
+                            <li>Streamlit</li>
+                        </ul>
+                        <div class="links">
+                            <a href="https://gaiasentinel.streamlit.app/" target="_blank" rel="noopener">Live ↗</a>
+                            <a href="https://github.com/devpanchal2005/GaiaSentinel" target="_blank"
+                                rel="noopener">Code ↗</a>
+                        </div>
                     </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Exploratory Data
-                            Analysis</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Hypothesis Testing
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">A/B Testing</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Time Series Analysis
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">ETL Pipelines</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Web Scraping</li>
-                    </ul>
-                </div>
+                </article>
 
-                <!-- Data Visualization -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-0">
-                        Data Visualization
-                    </h3>
-                    <div class="relative h-px mb-4 mt-2">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
+                <article class="card mini">
+                    <div class="mini-body">
+                        <p class="mini-kicker mono">Data analytics</p>
+                        <h4>Attendance for Impact</h4>
+                        <p>Dashboard that measures how attendance relates to marks and suggests what
+                            institutions can change.</p>
+                        <ul class="chips">
+                            <li>Python</li>
+                            <li>Data analysis</li>
+                            <li>Streamlit</li>
+                        </ul>
+                        <div class="links">
+                            <a href="https://attendance-for-impact.streamlit.app/" target="_blank"
+                                rel="noopener">Live ↗</a>
+                            <a href="https://github.com/devpanchal2005/Attedance-For-Impact" target="_blank"
+                                rel="noopener">Code ↗</a>
+                        </div>
                     </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Dashboard Design</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Storytelling with Data
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Chart Selection &
-                            Design</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Interactive Reporting
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Power BI</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Plotly & Streamlit
-                            Apps</li>
-                    </ul>
-                </div>
-
-                <!-- Databases & Tools -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-0">
-                        Databases & Tools
-                    </h3>
-                    <div class="relative h-px mb-4 mt-2">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">SQL (MySQL,
-                            PostgreSQL)</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Excel & Google Sheets
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Python</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Streamlit</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Git & GitHub</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Jupyter Notebook</li>
-                    </ul>
-                </div>
-
-                <!-- Reporting & Business -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-0">
-                        Reporting & Business
-                    </h3>
-                    <div class="relative h-px mb-4 mt-2">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/20 to-transparent"></div>
-                    </div>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">KPI Tracking</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Business Metrics
-                            Design</li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Stakeholder Reporting
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Automated Reporting
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Data-Driven Decisions
-                        </li>
-                        <li class="hover:text-primary-400 hover:pl-2 transition-all duration-200">Root Cause Analysis
-                        </li>
-                    </ul>
-                </div>
+                </article>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education -->
-    <section id="education" class="min-h-screen flex items-center justify-center py-16 relative overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none">
-        </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 text-primary-400">Education</h2>
-            <div class="rounded-2xl p-8 md:p-12 shadow-xl bg-black/30 backdrop-blur-md border border-white/10">
-                <div class="text-center mb-8">
-                    <h3 class="font-display text-2xl font-semibold text-gray-100">Bachelor's of Engineering in AI & Data
-                        Science</h3>
-                    <p class="text-gray-400">LJ University</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-3 mb-4">
-                    <button
-                        class="px-4 py-2 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 text-white hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-300 semester-btn"
-                        data-semester="1">Semester 1</button>
-                    <button
-                        class="px-4 py-2 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 text-white hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-300 semester-btn"
-                        data-semester="2">Semester 2</button>
-                    <button
-                        class="px-4 py-2 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 text-white hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-300 semester-btn"
-                        data-semester="3">Semester 3</button>
-                    <button
-                        class="px-4 py-2 rounded-xl bg-black/30 backdrop-blur-md border border-white/10 text-white hover:border-primary-400 hover:text-primary-400 hover:bg-white/10 transition-all duration-300 semester-btn"
-                        data-semester="4">Semester 4</button>
-                </div>
-                <div class="flex flex-wrap justify-center gap-3 mb-8">
-                    <button
-                        class="px-4 py-2 rounded-xl bg-primary-400 backdrop-blur-md border border-primary-400 text-black transition-all duration-300 semester-btn active"
-                        data-semester="5">Semester 5</button>
-                    <button disabled
-                        class="px-4 py-2 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 text-gray-400 opacity-50 cursor-not-allowed semester-btn"
-                        data-semester="6">Semester 6</button>
-                    <button disabled
-                        class="px-4 py-2 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 text-gray-400 opacity-50 cursor-not-allowed semester-btn"
-                        data-semester="7">Semester 7</button>
-                    <button disabled
-                        class="px-4 py-2 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 text-gray-400 opacity-50 cursor-not-allowed semester-btn"
-                        data-semester="8">Semester 8</button>
-                </div>
-                <div class="semester-skills w-[50vw] mx-auto" data-semester="1">
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Core
-                            Java</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">IOT</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Software
-                            Engineering</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Mathematics
-                            - I</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Physics</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Computer
-                            Hardware</span>
-                    </div>
-                </div>
-                <div class="semester-skills w-[50vw] mx-auto hidden" data-semester="2">
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Advanced
-                            Java</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">PostgreSQL</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">MySQL</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Data
-                            Structures</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Mathematics
-                            - II</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Electronics</span>
-                    </div>
-                </div>
-                <div class="semester-skills w-[50vw] mx-auto hidden" data-semester="3">
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Python</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Web
-                            Development</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Probability
-                            & Statistics</span>
-                    </div>
-                </div>
-                <div class="semester-skills w-[50vw] mx-auto hidden" data-semester="4">
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Advanced
-                            Python</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Supervised
-                            ML</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">MERN</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Theory
-                            of Computation</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Computer
-                            Organization</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Discrete
-                            Mathematics</span>
-                    </div>
-                </div>
-                <div class="semester-skills active w-[50vw] mx-auto hidden" data-semester="5">
-                    <div class="grid grid-cols-3 gap-4 w-full">
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">DAA</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">.NET
-                            Framework</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Computer
-                            Networks</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Economics
-                            & Finance</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Aptitude
-                            & Reasoning</span>
-                        <span
-                            class="flex items-center justify-center text-center w-full h-10 px-2 py-1 rounded-md bg-black/30 backdrop-blur-md border border-white/10 text-white text-sm transition-all duration-300 hover:bg-white/5 hover:border-primary-400 hover:text-primary-400">Technical
-                            English</span>
-                    </div>
-                </div>
+        <!-- Skills -->
+        <section id="skills" class="section wrap reveal skills-page">
+            <div class="section-head">
+                <p class="eyebrow mono">03 / 05</p>
+                <h2>Skills</h2>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" data-animate
-        class="min-h-screen flex items-center justify-center py-16 relative overflow-hidden">
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-12">
-
-                <!-- LEFT: Heading -->
-                <div class="md:w-1/2">
-                    <h2 class="font-display font-bold text-primary-400 mb-4 text-lg tracking-widest uppercase">Get In
-                        Touch
-                    </h2>
-                    <p class="font-display font-bold text-white leading-none"
-                        style="font-size: clamp(2.5rem, 7vw, 6rem);">
-                        TURN DATA<br>INTO<br>DECISIONS
-                    </p>
-                </div>
-
-                <!-- RIGHT: Links & Socials -->
-                <div class="md:w-1/2 flex flex-col gap-6">
-
-                    <!-- Email -->
-                    <a href="mailto:devspanchal.connect@gmail.com"
-                        class="group flex items-center justify-between px-6 py-5 rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md hover:border-primary-400 hover:bg-white/5 transition-all duration-300">
-                        <div class="flex items-center gap-4">
-                            <span
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-400/10 text-primary-400 group-hover:bg-primary-400 group-hover:text-black transition-all duration-300">
-                                <i class="fas fa-envelope text-sm"></i>
-                            </span>
+            <div class="skills">
+                <article class="card skill">
+                    <div class="skill-content">
+                        <div class="skill-head">
+                            <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
                             <div>
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Email</p>
-                                <p
-                                    class="text-white font-medium group-hover:text-primary-400 transition-colors duration-300">
-                                    devspanchal.connect@gmail.com</p>
+                                <h3>AI / GenAI</h3>
+                                <p class="mono muted">08 tools</p>
                             </div>
                         </div>
-                        <i
-                            class="fas fa-arrow-right text-gray-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300"></i>
-                    </a>
+                        <p class="skill-desc">LLM apps, retrieval and agent workflows.</p>
+                        <ul class="chips">
+                        <li>LLMs</li>
+                        <li>RAG pipelines</li>
+                        <li>Agentic AI</li>
+                        <li>LangChain</li>
+                        <li>Chroma</li>
+                        <li>Prompt engineering</li>
+                        <li>Gemini API</li>
+                        <li>OpenAI API</li>
+                        </ul>
+                    </div>
+                    <svg class="skill-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+                </article>
 
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/devpanchal2005" target="_blank"
-                        class="group flex items-center justify-between px-6 py-5 rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md hover:border-primary-400 hover:bg-white/5 transition-all duration-300">
-                        <div class="flex items-center gap-4">
-                            <span
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-400/10 text-primary-400 group-hover:bg-primary-400 group-hover:text-black transition-all duration-300">
-                                <i class="fab fa-linkedin text-sm"></i>
-                            </span>
+                <article class="card skill">
+                    <div class="skill-content">
+                        <div class="skill-head">
+                            <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
                             <div>
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">LinkedIn</p>
-                                <p
-                                    class="text-white font-medium group-hover:text-primary-400 transition-colors duration-300">
-                                    linkedin.com/in/devpanchal2005</p>
+                                <h3>Backend</h3>
+                                <p class="mono muted">05 tools</p>
                             </div>
                         </div>
-                        <i
-                            class="fas fa-arrow-right text-gray-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300"></i>
-                    </a>
+                        <p class="skill-desc">APIs and services that put models to work.</p>
+                        <ul class="chips">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>FastAPI</li>
+                        <li>Flask</li>
+                        <li>REST APIs</li>
+                        </ul>
+                    </div>
+                    <svg class="skill-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+                </article>
 
-                    <!-- GitHub -->
-                    <a href="https://github.com/DevPanchal2005" target="_blank"
-                        class="group flex items-center justify-between px-6 py-5 rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md hover:border-primary-400 hover:bg-white/5 transition-all duration-300">
-                        <div class="flex items-center gap-4">
-                            <span
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-400/10 text-primary-400 group-hover:bg-primary-400 group-hover:text-black transition-all duration-300">
-                                <i class="fab fa-github text-sm"></i>
-                            </span>
+                <article class="card skill">
+                    <div class="skill-content">
+                        <div class="skill-head">
+                            <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3.4 3.4M7 17l3.4-3.4M13.6 10.6L17 7M13.6 13.4L17 17"/></svg></span>
                             <div>
-                                <p class="text-xs text-gray-500 uppercase tracking-widest mb-0.5">GitHub</p>
-                                <p
-                                    class="text-white font-medium group-hover:text-primary-400 transition-colors duration-300">
-                                    github.com/DevPanchal2005</p>
+                                <h3>ML / DL</h3>
+                                <p class="mono muted">06 tools</p>
                             </div>
                         </div>
-                        <i
-                            class="fas fa-arrow-right text-gray-600 group-hover:text-primary-400 group-hover:translate-x-1 transition-all duration-300"></i>
-                    </a>
+                        <p class="skill-desc">Training, evaluating and explaining models.</p>
+                        <ul class="chips">
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow</li>
+                        <li>Keras</li>
+                        <li>CatBoost</li>
+                        <li>SHAP</li>
+                        <li>YOLOv8</li>
+                        </ul>
+                    </div>
+                    <svg class="skill-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3.4 3.4M7 17l3.4-3.4M13.6 10.6L17 7M13.6 13.4L17 17"/></svg>
+                </article>
 
+                <article class="card skill">
+                    <div class="skill-content">
+                        <div class="skill-head">
+                            <span class="skill-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></svg></span>
+                            <div>
+                                <h3>Data &amp; Infra</h3>
+                                <p class="mono muted">07 tools</p>
+                            </div>
+                        </div>
+                        <p class="skill-desc">Storage, pipelines and shipping.</p>
+                        <ul class="chips">
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Data pipelines &amp; ETL</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>GitLab</li>
+                        </ul>
+                    </div>
+                    <svg class="skill-mark" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></svg>
+                </article>
+
+                <div class="skills-hub" aria-hidden="true">
+                    <span class="skills-hub-ring"></span>
+                    <strong>26</strong>
+                    <span class="mono">tools</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-black border-t border-white/10 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+        <!-- Certificates -->
+        <section id="certificates" class="section wrap reveal">
+            <div class="section-head">
+                <p class="eyebrow mono">04 / 05</p>
+                <h2>Certificates</h2>
+            </div>
 
-            <!-- Left: Socials -->
-            <div>
-                <p class="text-xs tracking-widest font-semibold text-gray-500 mb-4">
-                    SOCIALS
-                </p>
+            <a href="https://panchaldev-certificates.notion.site/" target="_blank" rel="noopener" class="card cert-card" aria-label="Open certificate gallery on Notion">
+                <div class="cert-visual" aria-hidden="true">
+                    <div class="cert-notion-tile">
+                        <!-- Notion wordmark-style N -->
+                        <svg class="cert-notion-n" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 4.5C4 2.84315 5.34315 1.5 7 1.5H29.8284C30.6241 1.5 31.3872 1.81607 31.9497 2.37868L37.1213 7.55025C37.6839 8.11285 38 8.87591 38 9.67157V39.5C38 41.1569 36.6569 42.5 35 42.5H7C5.34315 42.5 4 41.1569 4 39.5V4.5Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 12L28 12M12 12V32M12 12L28 32M28 12V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cert-notion-label mono">Notion Gallery</span>
+                    </div>
+                    <div class="cert-stat-row">
+                        <div class="cert-stat">
+                            <span class="cert-stat-num">20+</span>
+                            <span class="cert-stat-desc mono">certificates</span>
+                        </div>
+                        <div class="cert-stat">
+                            <span class="cert-stat-num">6+</span>
+                            <span class="cert-stat-desc mono">issuers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p class="cert-label mono">Courses &amp; Credentials</p>
+                    <h3>View all certificates</h3>
+                    <p class="cert-desc">Every certificate I've earned — with course name, issuer and date. Hosted as a Notion gallery.</p>
+                    <span class="btn btn-sm cert-cta">
+                        Open gallery
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 10L10 2M10 2H4.5M10 2V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        </section>
 
-                <div class="flex flex-col gap-3 text-sm">
-                    <a href="https://linkedin.com/in/devpanchal2005" target="_blank"
-                        class="text-gray-300 hover:text-primary-400 hover:tracking-wider transition-all duration-300">
-                        LINKEDIN
-                    </a>
-
-                    <a href="https://github.com/DevPanchal2005" target="_blank"
-                        class="text-gray-300 hover:text-primary-400 hover:tracking-wider transition-all duration-300">
-                        GITHUB
-                    </a>
-
-                    <a href="https://github.com/DevsAlternateGit" target="_blank"
-                        class="text-gray-300 hover:text-primary-400 hover:tracking-wider transition-all duration-300">
-                        ALTERNATE GITHUB
-                    </a>
+        <!-- Contact -->
+        <section id="contact" class="section wrap reveal contact-page">
+            <div class="card contact">
+                <p class="eyebrow mono">05 / 05</p>
+                <h2>Have a project in mind? <em>Get in touch.</em></h2>
+                <a href="mailto:devspanchal.connect@gmail.com" class="contact-email">devspanchal.connect@gmail.com</a>
+                <div class="actions">
+                    <a href="mailto:devspanchal.connect@gmail.com" class="btn btn-primary">Send an email</a>
+                    <a href="https://linkedin.com/in/devpanchal2005" target="_blank" rel="noopener"
+                        class="btn">LinkedIn ↗</a>
+                    <a href="https://github.com/devpanchal2005" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
                 </div>
             </div>
+            <footer class="site-footer mono">
+                <p>© Dev S Panchal</p>
+                <p><a href="https://github.com/DevsAlternateGit" target="_blank" rel="noopener">Alternate GitHub ↗</a></p>
+                <p><span id="local-time">--:--</span> IST</p>
+            </footer>
+        </section>
 
-            <!-- Right: Time -->
-            <div class="text-right">
-                <p class="text-xs tracking-widest font-semibold text-gray-500 mb-2">
-                    LOCAL TIME
-                </p>
+    </main>
 
-                <p class="text-sm text-gray-300">
-                    <span id="local-time">--:--</span>,
-                    <span class="text-gray-500">IST</span>
-                </p>
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- Bottom Navigation for Mobile -->
-    <nav id="bottom-nav"
-        class="fixed bottom-0 w-full bg-black/40 backdrop-blur-sm border-t border-gray-900 z-50 md:hidden">
-        <div class="flex overflow-x-auto scrollbar-hide">
-            <div class="flex flex-nowrap mx-auto">
-                <a href="#home"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Home</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#about"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>About</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#experience"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Experience</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#projects"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Projects</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#skills"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Skills</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#education"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Education</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-                <a href="#contact"
-                    class="group relative flex flex-col items-center justify-center px-6 py-3 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300 ease-in-out data-[active=true]:text-primary-400 data-[active=true]:font-semibold"><span>Contact</span><span
-                        class="absolute bottom-1 left-0 right-0 mx-auto h-0.5 bg-primary-400 w-full scale-x-0 transition-transform duration-300 ease-in-out origin-center group-hover:scale-x-100 group-data-[active=true]:scale-x-100"></span></a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Scripts -->
     <script src="script.js"></script>
-
-    <!-- Globe Animated Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js"></script>
-    <script>
-        VANTA.GLOBE({
-            el: "#home",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            backgroundColor: 0x0
-        })
-    </script>
 </body>
 
 </html>

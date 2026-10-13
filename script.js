@@ -1,134 +1,150 @@
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
   // ==============================
-  // SECTION FADE / SLIDE ANIMATIONS
+  // SECTION REVEAL
   // ==============================
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
+  const reveals = document.querySelectorAll(".reveal");
 
-  document.querySelectorAll("[data-animate]").forEach((el) => {
-    el.classList.add(
-      "opacity-0",
-      "translate-y-6",
-      "transition-all",
-      "duration-700",
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 },
     );
-    observer.observe(el);
-  });
-
-  // ==============================
-  // NAV HIGHLIGHT ON SCROLL (with data-active)
-  // ==============================
-  const sections = document.querySelectorAll("section[id]");
-  const topNavLinks = document.querySelectorAll("#top-nav a");
-  const bottomNavLinks = document.querySelectorAll("#bottom-nav a");
-
-  function setActive(navLinks, id) {
-    navLinks.forEach((link) => {
-      link.removeAttribute("data-active");
-      if (link.getAttribute("href") === `#${id}`) {
-        link.setAttribute("data-active", "true");
-      }
-    });
+    reveals.forEach((el) => revealObserver.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("in"));
   }
 
-  function activateLink() {
-    let scrollY = window.scrollY + 100; // offset for fixed nav
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const id = section.getAttribute("id");
+  // ==============================
+  // NAV HIGHLIGHT ON SCROLL (sliding pill)
+  // ==============================
+  const pill = document.querySelector(".nav-pill");
+  const navLinks = document.querySelectorAll(".nav a");
+  const sections = [...navLinks]
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
 
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        setActive(topNavLinks, id);
-        setActive(bottomNavLinks, id);
-      }
-    });
-  }
-
-  window.addEventListener("scroll", activateLink);
-  activateLink();
-});
-
-// ==============================
-// Education Accordion
-// ==============================
-// Education Semester Toggle
-const semesterBtns = document.querySelectorAll(".semester-btn:not([disabled])");
-const semesterSkills = document.querySelectorAll(".semester-skills");
-
-semesterBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const semester = this.dataset.semester;
-
-    // Reset all buttons
-    semesterBtns.forEach((b) => {
-      b.classList.remove(
-        "active",
-        "text-black",
-        "bg-primary-400",
-        "border-primary-400",
-      );
-      b.classList.add(
-        "bg-black/30",
-        "text-white",
-        "border-white/10",
-        "hover:border-primary-400",
-        "hover:text-primary-400",
-        "hover:bg-white/10",
-      );
-    });
-
-    // Reset skills
-    semesterSkills.forEach((s) => s.classList.remove("active"));
-
-    // Activate selected button
-    this.classList.add("active", "text-black", "bg-primary-400");
-    this.classList.remove(
-      "bg-black/30",
-      "text-white",
-      "hover:border-primary-400",
-      "hover:text-primary-400",
-      "hover:bg-white/10",
-    );
-
-    // Show only the matching semester's skills
-    const targetSkills = document.querySelector(
-      `.semester-skills[data-semester="${semester}"]`,
-    );
-    if (targetSkills) {
-      targetSkills.classList.add("active");
+  function movePill(link) {
+    if (!pill) return;
+    if (!link) {
+      pill.classList.remove("on");
+      return;
     }
+    pill.style.width = `${link.offsetWidth}px`;
+    pill.style.setProperty("--pill-x", `${link.offsetLeft}px`);
+    pill.classList.add("on");
+  }
+
+  let currentId = undefined;
+
+  function setActive() {
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    const y = window.scrollY + window.innerHeight * 0.4;
+    let current = null;
+    sections.forEach((section) => {
+      if (section.offsetTop <= y) current = section.id;
+    });
+    if (atBottom && sections.length) current = sections[sections.length - 1].id;
+    if (current === currentId) return;
+    currentId = current;
+    let activeLink = null;
+    navLinks.forEach((link) => {
+      const on = link.getAttribute("href") === `#${current}`;
+      link.classList.toggle("active", on);
+      if (on) activeLink = link;
+    });
+    movePill(activeLink);
+  }
+
+  window.addEventListener("scroll", setActive, { passive: true });
+  window.addEventListener("resize", () => {
+    currentId = undefined;
+    setActive();
   });
-});
+  setActive();
+  if (document.fonts) document.fonts.ready.then(() => {
+    currentId = undefined;
+    setActive();
+  });
 
-// ==============================
-// LOCAL TIME (Optimized)
-// ==============================
-document.addEventListener("DOMContentLoaded", () => {
-  function updateTime() {
+  // ==============================
+  // POINTER EFFECTS (background spotlight + skill card glow)
+  // ==============================
+  const spot = document.querySelector(".bg-spot");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (spot && finePointer && !reduceMotion) {
+    let px = 0;
+    let py = 0;
+    let queued = false;
+    window.addEventListener(
+      "pointermove",
+      (e) => {
+        px = e.clientX;
+        py = e.clientY;
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+          spot.style.setProperty("--mx", `${px}px`);
+          spot.style.setProperty("--my", `${py}px`);
+          spot.classList.add("on");
+          queued = false;
+        });
+      },
+      { passive: true },
+    );
+    document.addEventListener("pointerleave", () => spot.classList.remove("on"));
+  }
+
+  document.querySelectorAll(".skill").forEach((card) => {
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--x", `${e.clientX - r.left}px`);
+      card.style.setProperty("--y", `${e.clientY - r.top}px`);
+    });
+  });
+
+  // ==============================
+  // TENURE (e.g. "1 yr 2 mos")
+  // ==============================
+  document.querySelectorAll("[data-tenure]").forEach((el) => {
+    const [y, m] = el.dataset.tenure.split("-").map(Number);
     const now = new Date();
+    const months = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m) + 1;
+    if (months < 1) return;
+    const yrs = Math.floor(months / 12);
+    const mos = months % 12;
+    const parts = [];
+    if (yrs) parts.push(`${yrs} yr${yrs > 1 ? "s" : ""}`);
+    if (mos) parts.push(`${mos} mo${mos > 1 ? "s" : ""}`);
+    el.textContent = parts.join(" ");
+  });
 
-    const timeString = now.toLocaleTimeString([], {
+  // ==============================
+  // LOCAL TIME (IST)
+  // ==============================
+  const timeEl = document.getElementById("local-time");
+
+  function updateTime() {
+    timeEl.textContent = new Date().toLocaleTimeString("en-IN", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: true,
+      timeZone: "Asia/Kolkata",
     });
-
-    const timeEl = document.getElementById("local-time");
-    if (timeEl) {
-      timeEl.textContent = timeString;
-    }
   }
 
-  updateTime();
-  setInterval(updateTime, 1000);
-})
+  if (timeEl) {
+    updateTime();
+    setInterval(updateTime, 30000);
+  }
+});

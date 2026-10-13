@@ -1,99 +1,115 @@
-Sections of my single page portfolio site:
+Sections of my single-page portfolio site (5 sections total):
 
-1. Home
--> Contains profile picture, name, and short bio
-    1. Name : Dev Panchal
-    2. Profile Picture : assests\profile_photo.jpg
-    3. Short Bio : I help innovators solve real-world problems using Machine Learning. Let's collaborate and build something impactful.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HERO (unlabelled, above all numbered sections)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Status badge   : AI Engineer at Relig Global (live dot)
+- Name           : Dev S Panchal
+- Tagline        : Applied AI engineer. I build LLM, RAG and agent systems and get them running in production.
+- Meta           : Ahmedabad, India · B.Eng AI & Data Science, LJ University
+- CTA buttons    : Resume (PDF) · Email · GitHub · LinkedIn
+- Profile photo  : assets/profile_photo.jpg
+- Stats bar      :
+    · 66%   less time on weekly reports
+    · 8.95  CGPA out of 10
+    · 3     ML apps live on Streamlit
 
-2. About Me
--> Currently pursuing a Bachelor's in Computer Engineering in AI and Data Science at the LJ University.
--> Currently working on ...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+01 / 05  EXPERIENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1 role · since Nov 2025
 
-3. Projects
--> Contains a list of projects I have worked on 
--> Each project has a title, a short description, tags realated to the project, a link to the project github repo and deployed site.
-    1. Project 1
-        1. Title : Project 1
-        2. Short Description : This is a short description of project 1
-        3. Link to project github repo : https://github.com/devpanchal/project1
-        4. Link to deployed site : https://devpanchal.github.io/project1
-        5. Tags : tag1, tag2, tag3
-    2. Project 2
-        1. Title : Project 2
-        2. Short Description : This is a short description of project 2
-        3. Link to project github repo : https://github.com/devpanchal/project2
-        4. Link to deployed site : https://devpanchal.github.io/project2
-        5. Tags : tag1, tag2
-    3. Project 3
-        1. Title : Project 3
-        2. Short Description : This is a short description of project 3
-        3. Link to project github repo : https://github.com/devpanchal/project3
-        4. Link to deployed site : https://devpanchal.github.io/project3
-        5. Tags : tag1
-    4. Project 4
-        1. Title : Project 4
-        2. Short Description : This is a short description of project 4
-        3. Link to project github repo : https://github.com/devpanchal/project4
-        4. Link to deployed site : https://devpanchal.github.io/project4
-        5. Tags : tag1, tag2
-    5. Project 5
-        1. Title : Project 5
-        2. Short Description : This is a short description of project 5
-        3. Link to project github repo : https://github.com/devpanchal/project5
-        4. Link to deployed site : https://devpanchal.github.io/project5
-        5. Tags : tag1
+Role        : AI Engineer
+Company     : Relig Global  (religglobal.com)
+When        : Nov 2025 → Current
+Where       : Ahmedabad, hybrid
+Industry    : Recruiting, RPO and finance outsourcing
+Stack       : Python, RAG, LLMs, openpyxl, Data pipelines
 
-4. Skills
-Supervised ML
-Unsupervised ML
-Reinforcement Learning
-Deep Learning
-Neural Networks
-TensorFlow
-Scikit-Learn
-Streamlit
-Django
-Flask
-MERN Stack
-Bootstrap
-Tailwind CSS
-EcmaScript
-MySQL
-PostgreSQL
-Java
-Git
+Key work:
+  1. RAG over financial documents
+     Retrieval pipeline that turns financial reports and client PDFs into context the team can query.
+  2. Data pipelines for trading
+     Python pipelines that clean raw financial data into signals for the trading and ops teams.
+  3. Reporting automation
+     Automated reconciliation and weekly reports with openpyxl. Work that took 3 days now ships the same day.
+  4. Working with stakeholders
+     Scoping loosely defined requests then shipping them as ML and GenAI tools.
 
-5. Education 
-    1. SEM - 1
-        1. Core Java
-        2. Software Engineering
-        3. Mathematics - I
-        4. Physics
-        5. IoT
-        6. Computer Hardware
-    2. SEM - 2
-        1. Advanced Java
-        2. PostgreSQL
-        3. MySQL
-        4. Data Structures 
-        5. Mathematics - II
-        6. Electronics
-    3. SEM - 3
-        1. Python
-        2. Full Stack Development
-        3. Probability and Stochastic Processes
-    4. SEM - 4
-        1. Advanced Python
-        2. Supervised ML
-        3. MERN Stack
-        4. Theory of Computation
-        5. Computer Architecture
-        6. Discrete Mathematics
-    5. SEM - 5 (Remaining)
-    6. SEM - 6 (Remaining)
-    7. SEM - 7 (Remaining)
-    8. SEM - 8 (Remaining)
+Impact metric: 66% less time spent on weekly reporting (3 days → same day)
 
-6. Contact Me
--> Send email, linkedin, github
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+02 / 05  PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Featured projects (large cards):
+
+1. ScholarBot  (Jan 2026)
+   School FAQ assistant that answers from the school's own documents.
+   Only calls the LLM when the rule engine is unsure.
+   Highlights:
+     - Rule-based intent engine (tokenization, normalization, confidence scoring)
+       with Gemini 2.5 Flash as the fallback.
+     - Timetables, notices and rulebooks split into sliding-window chunks passed as LLM context.
+     - Confidence threshold → most questions never hit the API.
+     - Flask REST backend with NLP, PDF parsing, intent classification and LLM calls in separate modules.
+   Stack: Python, Flask, Gemini API, RAG, NLP
+
+2. PredictGrad  (Jun 2025)
+   Flags engineering students at academic risk before their grades drop.
+   Trained on 905 students and deployed on Streamlit.
+   Highlights:
+     - Regression & classification with Ridge, CatBoost, ExtraTrees and BalancedBagging (voting + stacking).
+     - MAE 5.16 – 7.10 on predicted scores · F1 0.51 on imbalanced risk classification.
+     - Target built only from semester 1 & 2 data — no future leakage.
+     - SHAP risk dashboard showing why a student was flagged.
+   Stack: Scikit-learn, CatBoost, SHAP, Streamlit
+   Links: https://thepredictgrad.streamlit.app  ·  https://github.com/devpanchal2005/PredictGrad
+
+More projects (mini cards):
+
+3. GaiaSentinel  [Computer vision]
+   Real-time waste detection with YOLOv8. 14 classes, trained on 1,500 images with 4,784 annotations.
+   Stack: YOLOv8, Object detection, Streamlit
+   Links: https://gaiasentinel.streamlit.app  ·  https://github.com/devpanchal2005/GaiaSentinel
+
+4. Attendance for Impact  [Data analytics]
+   Dashboard that measures how attendance relates to marks and suggests what institutions can change.
+   Stack: Python, Data analysis, Streamlit
+   Links: https://attendance-for-impact.streamlit.app  ·  https://github.com/devpanchal2005/Attedance-For-Impact
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+03 / 05  SKILLS  (26 tools total)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. AI / GenAI  (8 tools) — LLM apps, retrieval and agent workflows
+   LLMs · RAG pipelines · Agentic AI · LangChain · Chroma
+   Prompt engineering · Gemini API · OpenAI API
+
+2. Backend  (5 tools) — APIs and services that put models to work
+   Python · Django · FastAPI · Flask · REST APIs
+
+3. ML / DL  (6 tools) — Training, evaluating and explaining models
+   Scikit-learn · TensorFlow · Keras · CatBoost · SHAP · YOLOv8
+
+4. Data & Infra  (7 tools) — Storage, pipelines and shipping
+   PostgreSQL · MySQL · MongoDB · Data pipelines & ETL
+   Docker · Git · GitLab
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+04 / 05  CERTIFICATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Notion gallery of all certificates earned — course name, issuer and date.
+20+ certificates · 6+ issuers
+Link: https://panchaldev-certificates.notion.site/
+Opens in a new tab.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+05 / 05  CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Heading  : Have a project in mind? Get in touch.
+Email    : devspanchal.connect@gmail.com
+Buttons  : Send an email · LinkedIn ↗ · GitHub ↗
+Profiles :
+  LinkedIn  https://linkedin.com/in/devpanchal2005
+  GitHub    https://github.com/devpanchal2005
