@@ -43,6 +43,46 @@
   }
 }
 
+/* DEBUG: forced theme overrides (toggled via JS) */
+[data-theme="light"] {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --surface-2: #efede7;
+  --line: #e4e1d9;
+  --line-strong: #cfcbc1;
+  --text: #16161a;
+  --body: #3d3d45;
+  --muted: #74747d;
+  --accent: #4338ca;
+  --accent-ink: #ffffff;
+  --accent-soft: #eceafd;
+  --live: #16a34a;
+  --dark-btn: #16161a;
+  --dark-btn-ink: #ffffff;
+  --shadow: 0 1px 2px rgba(22, 22, 26, 0.04), 0 8px 24px -12px rgba(22, 22, 26, 0.12);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0e0e11;
+  --surface: #16161b;
+  --surface-2: #1d1d23;
+  --line: #26262d;
+  --line-strong: #3a3a43;
+  --text: #f1f1f3;
+  --body: #c3c3cb;
+  --muted: #8a8a94;
+  --accent: #8b8cf8;
+  --accent-ink: #0e0e11;
+  --accent-soft: rgba(139, 140, 248, 0.14);
+  --live: #4ade80;
+  --dark-btn: #f1f1f3;
+  --dark-btn-ink: #0e0e11;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+
 *,
 *::before,
 *::after {
@@ -221,6 +261,29 @@ strong {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
 }
 
 /* ---------- Buttons ---------- */
@@ -1517,6 +1580,11 @@ h4 {
 
   .header-inner {
     grid-template-columns: 1fr auto;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
   }
 
   .project {
