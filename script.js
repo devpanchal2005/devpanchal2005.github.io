@@ -148,36 +148,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateTime, 30000);
   }
 });
-
-// ==============================
-// THEME TOGGLE
-// ==============================
-(function () {
-  const btn  = document.getElementById("theme-toggle");
-  const icon = document.getElementById("theme-icon");
-  if (!btn || !icon) return;
-
-  // Icon shown when dark  → sun  ("click to switch to light")
-  // Icon shown when light → moon ("click to switch to dark")
-  const SUN_PATH  = '<path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M2.93 2.93l1.06 1.06M12.01 12.01l1.06 1.06M2.93 13.07l1.06-1.06M12.01 3.99l1.06-1.06" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>';
-  const MOON_PATH = '<path d="M13.5 9A5.5 5.5 0 0 1 7 2.5a.5.5 0 0 0-.6-.6A6.5 6.5 0 1 0 14.1 9.6a.5.5 0 0 0-.6-.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
-
-  let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  function apply(force) {
-    if (force) {
-      document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-    }
-    // Show sun when dark (action = go light), moon when light (action = go dark)
-    icon.innerHTML = isDark ? SUN_PATH : MOON_PATH;
-    btn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
-  }
-
-  btn.addEventListener("click", function () {
-    isDark = !isDark;
-    apply(true);
-  });
-
-  // Set icon on load without overriding data-theme (let OS media query win)
-  apply(false);
-})();
