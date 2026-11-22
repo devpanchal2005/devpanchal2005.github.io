@@ -11,8 +11,8 @@ HERO (unlabelled, above all numbered sections)
 - Profile photo  : assets/profile_photo.jpg
 - Stats bar      :
     · 66%   less time on weekly reports
-    · 8.95  CGPA out of 10
-    · 3     ML apps live on Streamlit
+    · 9.09  CGPA out of 10
+    · 7+    live deployments
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 01 / 05  EXPERIENCE
@@ -55,12 +55,22 @@ Featured projects (large cards):
      - Flask REST backend with NLP, PDF parsing, intent classification and LLM calls in separate modules.
    Stack: Python, Flask, Gemini API, RAG, NLP
 
-2. PredictGrad  (Jun 2025)
+2. PreambleMap  (Oct 2026)
+   NLP project that groups the preambles of 158 national constitutions by how they are written, shown on an interactive world map.
+   Highlights:
+     - all-mpnet-base-v2 embeddings, country name masked, so groups reflect wording not place names.
+     - 7 groups from a consensus of 200 KMeans runs, checked against Gaussian mixture and HDBSCAN.
+     - Stability: ARI 0.955 split-half, 0.89 on subsamples. Silhouette 0.16, so groups are drafting traditions not hard categories.
+     - Streamlit app: map, per-group terms and borderline countries, classify pasted text.
+   Stack: Sentence embeddings, Clustering, PyTorch, Plotly, Streamlit
+   Links: https://preamblemap.streamlit.app  ·  https://github.com/devpanchal2005/PreambleMap
+
+3. PredictGrad  (Jun 2025)
    Flags engineering students at academic risk before their grades drop.
    Trained on 905 students and deployed on Streamlit.
    Highlights:
      - Regression & classification with Ridge, CatBoost, ExtraTrees and BalancedBagging (voting + stacking).
-     - MAE 5.16 – 7.10 on predicted scores · F1 0.51 on imbalanced risk classification.
+     - MAE 5.71 – 7.10 on predicted scores · F1 0.44 on imbalanced risk classification.
      - Target built only from semester 1 & 2 data — no future leakage.
      - SHAP risk dashboard showing why a student was flagged.
    Stack: Scikit-learn, CatBoost, SHAP, Streamlit
@@ -68,15 +78,15 @@ Featured projects (large cards):
 
 More projects (mini cards):
 
-3. GaiaSentinel  [Computer vision]
-   Real-time waste detection with YOLOv8. 14 classes, trained on 1,500 images with 4,784 annotations.
+4. GaiaSentinel  [Computer vision]
+   Litter detection with YOLOv8s across all 60 TACO categories. Upload a photo and get boxes with confidence scores. mAP50 0.141 on validation.
    Stack: YOLOv8, Object detection, Streamlit
    Links: https://gaiasentinel.streamlit.app  ·  https://github.com/devpanchal2005/GaiaSentinel
 
-4. Attendance for Impact  [Data analytics]
+5. Attendance for Impact  [Data analytics]
    Dashboard that measures how attendance relates to marks and suggests what institutions can change.
    Stack: Python, Data analysis, Streamlit
-   Links: https://attendance-for-impact.streamlit.app  ·  https://github.com/devpanchal2005/Attedance-For-Impact
+   Links: https://attendance-for-impact.streamlit.app  ·  https://github.com/devpanchal2005/Attendance-For-Impact
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 03 / 05  SKILLS  (26 tools total)
@@ -100,7 +110,7 @@ More projects (mini cards):
 04 / 05  CERTIFICATES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Notion gallery of all certificates earned — course name, issuer and date.
-20+ certificates · 6+ issuers
+30+ certificates · 11+ issuers
 Link: https://panchaldev-certificates.notion.site/
 Opens in a new tab.
 

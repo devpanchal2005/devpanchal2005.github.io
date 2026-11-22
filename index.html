@@ -94,12 +94,12 @@
                     <dd>less time on weekly reports</dd>
                 </div>
                 <div>
-                    <dt>8.95</dt>
+                    <dt>9.09</dt>
                     <dd>CGPA out of 10</dd>
                 </div>
                 <div>
-                    <dt>3</dt>
-                    <dd>ML apps live on Streamlit</dd>
+                    <dt>7+</dt>
+                    <dd>live deployments</dd>
                 </div>
             </dl>
         </section>
@@ -238,6 +238,70 @@
                     </div>
                 </article>
 
+                <!-- PreambleMap -->
+                <article class="card project">
+                    <div class="visual flow" aria-label="PreambleMap clustering pipeline">
+                        <p class="flow-label mono">How preambles become groups</p>
+                        <div class="flow-step">Constitution texts<span class="mono">193 countries · 158 clustered · 29
+                                no preamble · 6 formula only</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">Chunk and mask<span class="mono">≤300-token chunks, averaged · own
+                                country name → [COUNTRY]</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">all-mpnet-base-v2 embeddings<span class="mono">mean-centered, unit
+                                length</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">Spherical K-Means, k = 7 → consensus<span class="mono">200 bootstrapped runs ·
+                                co-association matrix · 3 boundary countries reassigned</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-step">Validated<span class="mono">split-half ARI 0.96 · silhouette
+                                0.16</span></div>
+                        <div class="flow-arrow" aria-hidden="true"></div>
+                        <div class="flow-split">
+                            <div class="flow-step">
+                                <span class="mono">7 groups</span>
+                                Interactive world map
+                            </div>
+                            <div class="flow-step flow-accent">
+                                <span class="mono">nearest group centre</span>
+                                Try your own text
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>PreambleMap</h3>
+                            <span class="mono muted">Oct 2026</span>
+                        </div>
+                        <p class="summary">NLP project that groups the preambles of 158 national constitutions by how
+                            they are written and shows the groups on an interactive world map.</p>
+                        <ul class="bullets">
+                            <li>Preambles are embedded in chunks with <strong>all-mpnet-base-v2</strong> and the
+                                country name masked, so groups reflect wording, not place names.</li>
+                            <li>Seven groups from a consensus of <strong>200 KMeans runs</strong>, checked against
+                                Gaussian mixture and HDBSCAN clustering.</li>
+                            <li>Stability tested: <strong>ARI 0.955</strong> split-half and <strong>0.89</strong> on
+                                subsamples. Silhouette is low (0.16), so the groups are described as drafting
+                                traditions, not hard categories.</li>
+                            <li>Streamlit app with a map, per-group terms and borderline countries, and a tab that
+                                classifies pasted text.</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>Sentence embeddings</li>
+                            <li>Clustering</li>
+                            <li>PyTorch</li>
+                            <li>Plotly</li>
+                            <li>Streamlit</li>
+                        </ul>
+                        <div class="links">
+                            <a href="https://preamblemap.streamlit.app/" target="_blank" rel="noopener"
+                                class="btn btn-sm btn-dark">Live demo ↗</a>
+                            <a href="https://github.com/devpanchal2005/PreambleMap" target="_blank" rel="noopener"
+                                class="btn btn-sm">Code ↗</a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- PredictGrad -->
                 <article class="card project">
                     <div class="visual flow" aria-label="PredictGrad prediction pipeline">
@@ -250,11 +314,11 @@
                         <div class="flow-arrow" aria-hidden="true"></div>
                         <div class="flow-split">
                             <div class="flow-step">
-                                <span class="mono">MAE 5.16 – 7.10</span>
+                                <span class="mono">MAE 5.71 – 7.10</span>
                                 Predicted marks
                             </div>
                             <div class="flow-step flow-accent">
-                                <span class="mono">F1 0.51</span>
+                                <span class="mono">F1 0.44</span>
                                 At-risk flag
                             </div>
                         </div>
@@ -272,7 +336,7 @@
                         <ul class="bullets">
                             <li>Regression and classification with Ridge, CatBoost, ExtraTrees and
                                 BalancedBagging, combined through Voting and Stacking.</li>
-                            <li><strong>MAE 5.16 to 7.10</strong> on predicted scores, <strong>F1 0.51</strong> on
+                            <li><strong>MAE 5.71 to 7.10</strong> on held-out test scores, <strong>F1 0.44</strong> for
                                 imbalanced risk classification.</li>
                             <li>Target built only from semester 1 and 2 data, so nothing leaks from the future.</li>
                             <li>Risk dashboard that uses SHAP to show why a student was flagged.</li>
@@ -301,8 +365,8 @@
                     <div class="mini-body">
                         <p class="mini-kicker mono">Computer vision</p>
                         <h4>GaiaSentinel</h4>
-                        <p>Real-time waste detection with YOLOv8. 14 classes, trained on 1,500 images with
-                            4,784 annotations.</p>
+                        <p>Litter detection with YOLOv8s across all 60 TACO categories. Upload a photo and
+                            get boxes with confidence scores. mAP50 0.141 on validation.</p>
                         <ul class="chips">
                             <li>YOLOv8</li>
                             <li>Object detection</li>
@@ -330,7 +394,7 @@
                         <div class="links">
                             <a href="https://attendance-for-impact.streamlit.app/" target="_blank"
                                 rel="noopener">Live ↗</a>
-                            <a href="https://github.com/devpanchal2005/Attedance-For-Impact" target="_blank"
+                            <a href="https://github.com/devpanchal2005/Attendance-For-Impact" target="_blank"
                                 rel="noopener">Code ↗</a>
                         </div>
                     </div>
@@ -464,11 +528,11 @@
                     </div>
                     <div class="cert-stat-row">
                         <div class="cert-stat">
-                            <span class="cert-stat-num">20+</span>
+                            <span class="cert-stat-num">30+</span>
                             <span class="cert-stat-desc mono">certificates</span>
                         </div>
                         <div class="cert-stat">
-                            <span class="cert-stat-num">6+</span>
+                            <span class="cert-stat-num">11+</span>
                             <span class="cert-stat-desc mono">issuers</span>
                         </div>
                     </div>
